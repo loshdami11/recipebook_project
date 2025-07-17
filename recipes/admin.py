@@ -1,5 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
-from . models import Recipe
-admin.site.register(Recipe)
+
+from .models import Recipe
+
+class RecipeAdmin(admin.ModelAdmin):
+    list_display = ['title', 'author', 'content', 'date_created']
+    search_fields = ['title']
+    list_filter = ['author']
+
+admin.site.register(Recipe, RecipeAdmin)
