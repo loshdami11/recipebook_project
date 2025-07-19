@@ -1,0 +1,11 @@
+{% extends 'recipes/base.html' %}
+
+{% block page_header %}{{ recipe.title }}{% endblock page_header %}
+
+{% block content %}
+<p>This recipe has a unique identity of {{ recipe.id }}.</p>
+<p>Author: {{ recipe.author }}</p>
+<p class='lead'>{{ recipe.content }}</p>
+<p>This recipe was created on {{ recipe.date_created }}</p>
+
+{% endblock content %}

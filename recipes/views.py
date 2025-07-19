@@ -24,3 +24,12 @@ def create_recipe(request):
         template = 'recipes/create_recipe.html'
         context = {'form': form}
         return render(request,template,context)
+    
+def recipe_detail(request, recipe_id):
+    """Detail View for a recipe"""
+    recipe = Recipe.objects.get(id=recipe_id)
+    context = {
+        'recipe': recipe
+    }
+    template = 'recipes/recipe_detail.html'
+    return render(request, template, context)

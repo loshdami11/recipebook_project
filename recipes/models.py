@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Recipe(models.Model):
     title = models.CharField()
     author = models.CharField()
@@ -10,3 +9,5 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+    class Meta:
+        ordering = ['-date_created']
