@@ -1,9 +1,18 @@
-{% block content %}
-<h1>Create new recipe post</h1>
+{% extend 'blog/base.html'%}
 
+{% load django-bootstrap5 %}
+
+{% block page_header %}
+<h1 class="text-primary">Create new blog post</h1>
+{% endblock page_header %}
+
+{% block content %}
 <form method = 'post'>
 {% csrf_token %}
-{{form.as_p}}
-<button type ='submit'>Submit</button>
-</form>
+{% bootstrap-form form %}
+
+{% bootstrap_button button_type="submit" content="Submit" %}
+{% bootstrap_button button_type="reset" content="Cancel" %}
+</form
+
 {% endblock content %}
