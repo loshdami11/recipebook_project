@@ -1,0 +1,16 @@
+{% extends 'recipes/base.html' %}
+
+{% block page_header %}
+<h1 style="color: purple; text-align: center;">Recipe</h1>
+{% endblock page_header %}
+
+{% block content %}
+
+
+{% for recipe in recipes %}
+<section>
+<h5><a href="{% url 'recipe-detail' recipe.id %}">{{ recipe.title }}</a></h5>
+</section>
+
+{% endfor %}
+{% endblock content %}

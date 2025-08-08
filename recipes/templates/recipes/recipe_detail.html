@@ -1,0 +1,10 @@
+{% extends 'recipes/base.html' %}
+
+{% block page_header %}<h1 class="text-center text-primary">{{ recipe.title }}</h1>{% endblock page_header %}
+
+{% block content %}
+<p>Author: {{ recipe.author }}</p>
+<p class='lead'>{{ recipe.content }}</p>
+<p>This recipe was created on {{ recipe.date_created }}</p>
+<p>This recipe was last updated on {{ recipe.date_updated }}</p>
+{% endblock content %}
